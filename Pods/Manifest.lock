@@ -1,0 +1,20 @@
+PODS:
+  - LRPreferenceLinkSDK (1.0.7)
+  - LRPrivacyManagerSDK (1.1.10):
+    - LRPreferenceLinkSDK
+
+DEPENDENCIES:
+  - LRPrivacyManagerSDK
+
+SPEC REPOS:
+  trunk:
+    - LRPreferenceLinkSDK
+    - LRPrivacyManagerSDK
+
+SPEC CHECKSUMS:
+  LRPreferenceLinkSDK: 9c8ef0a2f8d850c7aa5170a392b245c8e7887a05
+  LRPrivacyManagerSDK: ba38238303d80d6d90fdb95f111fd92892db64df
+
+PODFILE CHECKSUM: 4511df7483fc02da01f0facf6abca878ab4d059f
+
+COCOAPODS: 1.11.2

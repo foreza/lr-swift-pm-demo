@@ -1,0 +1,4 @@
+framework module LRPreferenceLinkSDK {
+  header "LRPreferenceLinkSDK-Swift.h"
+  requires objc
+}

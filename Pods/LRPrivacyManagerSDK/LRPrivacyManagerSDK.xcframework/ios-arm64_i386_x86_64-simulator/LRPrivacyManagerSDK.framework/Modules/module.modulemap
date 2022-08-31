@@ -1,0 +1,4 @@
+framework module LRPrivacyManagerSDK {
+  header "LRPrivacyManagerSDK-Swift.h"
+  requires objc
+}

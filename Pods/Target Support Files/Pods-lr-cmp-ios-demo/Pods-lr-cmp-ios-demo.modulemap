@@ -1,0 +1,6 @@
+framework module Pods_lr_cmp_ios_demo {
+  umbrella header "Pods-lr-cmp-ios-demo-umbrella.h"
+
+  export *
+  module * { export * }
+}

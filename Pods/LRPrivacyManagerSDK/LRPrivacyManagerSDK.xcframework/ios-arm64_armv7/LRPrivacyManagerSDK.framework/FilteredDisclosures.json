@@ -1,0 +1,1438 @@
+[
+  {
+    "vendorId" : 6,
+    "disclosures" : [
+      {
+        "purposes" : [
+          2,
+          3,
+          4,
+          7
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*uxid",
+        "domain" : "*"
+      },
+      {
+        "purposes" : [
+          7
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*cjloc",
+        "domain" : "*"
+      },
+      {
+        "purposes" : [
+          7
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*twloc",
+        "domain" : "*"
+      },
+      {
+        "purposes" : [
+          2,
+          3,
+          4,
+          7
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*udc*",
+        "domain" : "*"
+      },
+      {
+        "purposes" : [
+          3,
+          4
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*rtpgy",
+        "domain" : "*"
+      },
+      {
+        "purposes" : [
+          7
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*optsiteconv*",
+        "domain" : "*"
+      },
+      {
+        "purposes" : [
+          2
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*AdCl_ex_",
+        "domain" : "*"
+      },
+      {
+        "purposes" : [
+          2,
+          3,
+          4,
+          7
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "*rtbp_*",
+        "domain" : "*"
+      }
+    ]
+  },
+  {
+    "vendorId" : 28,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 7776000,
+        "type" : "cookie",
+        "identifier" : "TLUID",
+        "domain" : "*.3lift.com"
+      }
+    ]
+  },
+  {
+    "vendorId" : 84,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          3,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31556952,
+        "type" : "cookie",
+        "identifier" : "SEUNCY",
+        "domain" : "*.semasio.net"
+      }
+    ]
+  },
+  {
+    "vendorId" : 94,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31556952,
+        "type" : "cookie",
+        "identifier" : "b",
+        "domain" : ".blismedia.com"
+      },
+      {
+        "type" : "app",
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "identifier" : "id"
+      }
+    ]
+  },
+  {
+    "vendorId" : 136,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "ng",
+        "domain" : "adscale.de"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "oo",
+        "domain" : "adscale.de"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "tu",
+        "domain" : "adscale.de"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "uu",
+        "domain" : "adscale.de"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "cct",
+        "domain" : "adscale.de"
+      }
+    ]
+  },
+  {
+    "vendorId" : 137,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 7776000,
+        "type" : "cookie",
+        "identifier" : "id",
+        "domain" : "m6r.eu"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 604800,
+        "type" : "cookie",
+        "identifier" : "yieldlab",
+        "domain" : "m6r.eu"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 604800,
+        "type" : "cookie",
+        "identifier" : "adx",
+        "domain" : "m6r.eu"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 604800,
+        "type" : "cookie",
+        "identifier" : "adscale",
+        "domain" : "m6r.eu"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 604800,
+        "type" : "cookie",
+        "identifier" : "appnexus",
+        "domain" : "m6r.eu"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 7776000,
+        "type" : "cookie",
+        "identifier" : "cct",
+        "domain" : "m6r.eu"
+      }
+    ]
+  },
+  {
+    "vendorId" : 153,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 33696000,
+        "type" : "cookie",
+        "identifier" : "bluestack-webm",
+        "domain" : "mobile.mng-ads.com"
+      },
+      {
+        "type" : "app",
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "identifier" : "bluestack-inapp"
+      }
+    ]
+  },
+  {
+    "vendorId" : 198,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "maxAgeSeconds" : 0,
+        "type" : "cookie",
+        "identifier" : "sync-webm",
+        "domain" : "sync.tv"
+      },
+      {
+        "type" : "app",
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7
+        ],
+        "identifier" : "sync-inapp"
+      }
+    ]
+  },
+  {
+    "vendorId" : 206,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "vid",
+        "domain" : "*.hybrid.ai"
+      }
+    ]
+  },
+  {
+    "vendorId" : 217,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 1800,
+        "type" : "cookie",
+        "identifier" : "audit",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "cat2",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 1209600,
+        "type" : "cookie",
+        "identifier" : "crt",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 3600,
+        "type" : "cookie",
+        "identifier" : "ctc",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 3600,
+        "type" : "cookie",
+        "identifier" : "edaa",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 86400,
+        "type" : "cookie",
+        "identifier" : "frq",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2
+        ],
+        "maxAgeSeconds" : 1800,
+        "type" : "cookie",
+        "identifier" : "hits",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 1296000,
+        "type" : "cookie",
+        "identifier" : "lv",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 630720000,
+        "type" : "cookie",
+        "identifier" : "optout",
+        "domain" : "*.ipromote.com"
+      },
+      {
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 720000,
+        "type" : "cookie",
+        "identifier" : "sid",
+        "domain" : "*.ipromote.com"
+      }
+    ]
+  },
+  {
+    "vendorId" : 251,
+    "disclosures" : [
+      {
+        "domain" : "*",
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 0,
+        "type" : "cookie",
+        "identifier" : "session_id",
+        "cookieRefresh" : true
+      },
+      {
+        "domain" : "*",
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "_pbjs_userid_consent_data",
+        "cookieRefresh" : true
+      }
+    ]
+  },
+  {
+    "vendorId" : 273,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "cc",
+        "domain" : "<brandId>.tracker.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "cc",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "gig-rizk-userAction",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "gig-rizk-userState",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "vaihtoplus-viewedProducts",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "veho-viewedProducts  ",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "centerparcs-viewedPropertyId ",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-registered",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-id",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-title",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-salary",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-location",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-industry",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-id",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-title",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-salary",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-location",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-industry",
+        "domain" : "c.bannerflow.net"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "gig-rizk-userAction",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "gig-rizk-userState",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "vaihtoplus-viewedProducts",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "veho-viewedProducts  ",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "centerparcs-viewedPropertyId ",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-registered",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-id",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-title",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-salary",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-location",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-viewed-industry",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-id",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-title",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-salary",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-location",
+        "domain" : "cdn.bannerflow.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "reed-jobs-applied-industry",
+        "domain" : "cdn.bannerflow.com"
+      }
+    ]
+  },
+  {
+    "vendorId" : 314,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          7,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "_km",
+        "domain" : "t.kmtx.io"
+      }
+    ]
+  },
+  {
+    "vendorId" : 319,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          7
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "ccc",
+        "domain" : "clipcentric.com"
+      },
+      {
+        "type" : "web",
+        "purposes" : [
+          1,
+          2,
+          7
+        ],
+        "identifier" : "f"
+      },
+      {
+        "type" : "web",
+        "purposes" : [
+          1,
+          2,
+          7
+        ],
+        "identifier" : "b"
+      },
+      {
+        "type" : "web",
+        "purposes" : [
+          1,
+          2,
+          7
+        ],
+        "identifier" : "c"
+      }
+    ]
+  },
+  {
+    "vendorId" : 423,
+    "disclosures" : [
+      {
+        "domain" : "travelaudience.com",
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 34186669,
+        "type" : "cookie",
+        "identifier" : "_tracker",
+        "cookieRefresh" : false
+      },
+      {
+        "domain" : "travelaudience.com",
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 0,
+        "type" : "cookie",
+        "identifier" : "opt_out",
+        "cookieRefresh" : false
+      }
+    ]
+  },
+  {
+    "vendorId" : 450,
+    "disclosures" : [
+      {
+        "purposes" : [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maxAgeSeconds" : 31556952,
+        "type" : "cookie",
+        "identifier" : "cP",
+        "domain" : "neodatagroup.com"
+      },
+      {
+        "purposes" : [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maxAgeSeconds" : 31556952,
+        "type" : "cookie",
+        "identifier" : "cProfile",
+        "domain" : "neodatagroup.com"
+      },
+      {
+        "purposes" : [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "maxAgeSeconds" : 31556952,
+        "type" : "cookie",
+        "identifier" : "tR",
+        "domain" : "neodatagroup.com"
+      },
+      {
+        "purposes" : [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 31556952,
+        "type" : "cookie",
+        "identifier" : "cOptout",
+        "domain" : "neodatagroup.com"
+      },
+      {
+        "type" : "web",
+        "purposes" : [
+          3
+        ],
+        "identifier" : "neoLastSync_*"
+      }
+    ]
+  },
+  {
+    "vendorId" : 531,
+    "disclosures" : [
+      {
+        "type" : "web",
+        "purposes" : [
+          1,
+          7
+        ],
+        "identifier" : "SMC"
+      }
+    ]
+  },
+  {
+    "vendorId" : 663,
+    "disclosures" : [
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 1080,
+        "type" : "cookie",
+        "identifier" : "CRAFT_CSRF_TOKEN",
+        "domain" : "mobsuccess.com"
+      },
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 1080,
+        "type" : "cookie",
+        "identifier" : "PHPSESSID",
+        "domain" : "mobsuccess.com"
+      },
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "tarteaucitron",
+        "domain" : "mobsuccess.com"
+      },
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "email",
+        "domain" : "mobsuccess.com"
+      },
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "password",
+        "domain" : "mobsuccess.com"
+      },
+      {
+        "purposes" : [
+
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "log",
+        "domain" : "mobsuccess.com"
+      }
+    ]
+  },
+  {
+    "vendorId" : 666,
+    "disclosures" : [
+      {
+        "maxAgeSeconds" : 31556952,
+        "type" : "cookie",
+        "identifier" : "beopid",
+        "purposes" : [
+          2
+        ]
+      }
+    ]
+  },
+  {
+    "vendorId" : 727,
+    "disclosures" : [
+      {
+        "domain" : "*.pinpoll.com",
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "visitor",
+        "cookieRefresh" : true
+      },
+      {
+        "domain" : "*.pinpoll.com",
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "cookie",
+        "identifier" : "dnt",
+        "cookieRefresh" : true
+      },
+      {
+        "domain" : "tools.pinpoll.com",
+        "purposes" : [
+          1
+        ],
+        "type" : "web",
+        "cookieRefresh" : false,
+        "identifier" : "webpSupported"
+      },
+      {
+        "domain" : "tools.pinpoll.com",
+        "purposes" : [
+          1
+        ],
+        "type" : "web",
+        "cookieRefresh" : false,
+        "identifier" : "allVisitorVotes"
+      },
+      {
+        "domain" : "tools.pinpoll.com",
+        "purposes" : [
+          1
+        ],
+        "type" : "web",
+        "cookieRefresh" : false,
+        "identifier" : "pinpoll_allVisitorVotes"
+      },
+      {
+        "domain" : "*.pinpoll.com",
+        "purposes" : [
+          1,
+          6,
+          7
+        ],
+        "type" : "web",
+        "cookieRefresh" : false,
+        "identifier" : "lastTriggered"
+      }
+    ]
+  },
+  {
+    "vendorId" : 791,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          12
+        ],
+        "maxAgeSeconds" : 7776000,
+        "type" : "cookie",
+        "identifier" : "mediasquare",
+        "domain" : "pbs-front.mediasquare.fr"
+      }
+    ]
+  },
+  {
+    "vendorId" : 855,
+    "disclosures" : [
+      {
+        "purposes" : [
+          1,
+          2,
+          4,
+          7
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "usi",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          4,
+          7
+        ],
+        "maxAgeSeconds" : -1,
+        "type" : "cookie",
+        "identifier" : "sessionId",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "i",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "c",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "v",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "s",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          2
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "r",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "t",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1,
+          4
+        ],
+        "maxAgeSeconds" : 60602430,
+        "type" : "cookie",
+        "identifier" : "cnv",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 2147483647,
+        "type" : "cookie",
+        "identifier" : "consent",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 2147483647,
+        "type" : "cookie",
+        "identifier" : "noCookies",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "purposes" : [
+          1
+        ],
+        "maxAgeSeconds" : 2147483647,
+        "type" : "cookie",
+        "identifier" : "doNotTrack",
+        "domain" : "delivery.adnuntius.com"
+      },
+      {
+        "type" : "web",
+        "purposes" : [
+          1,
+          2,
+          4,
+          7
+        ],
+        "identifier" : "adn.metaData"
+      }
+    ]
+  },
+  {
+    "vendorId" : 857,
+    "disclosures" : [
+      {
+        "domain" : "ad.71i.de",
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          10
+        ],
+        "maxAgeSeconds" : 31536000,
+        "type" : "cookie",
+        "identifier" : "somtag",
+        "cookieRefresh" : false
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          10
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "app",
+        "identifier" : "somquery",
+        "domain" : "somquery.sqrt-5041.de"
+      },
+      {
+        "purposes" : [
+          1,
+          2,
+          3,
+          4,
+          10
+        ],
+        "maxAgeSeconds" : 2592000,
+        "type" : "app",
+        "identifier" : "somquery-mobile",
+        "domain" : "somquery.sqrt-5041.de"
+      }
+    ]
+  }
+]

@@ -1,0 +1,3 @@
+${PODS_ROOT}/Target Support Files/Pods-lr-cmp-ios-demo/Pods-lr-cmp-ios-demo-frameworks.sh
+${PODS_XCFRAMEWORKS_BUILD_DIR}/LRPreferenceLinkSDK/LRPreferenceLinkSDK.framework/LRPreferenceLinkSDK
+${PODS_XCFRAMEWORKS_BUILD_DIR}/LRPrivacyManagerSDK/LRPrivacyManagerSDK.framework/LRPrivacyManagerSDK

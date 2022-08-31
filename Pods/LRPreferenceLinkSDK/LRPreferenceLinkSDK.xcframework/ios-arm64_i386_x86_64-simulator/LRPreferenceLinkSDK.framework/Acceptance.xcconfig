@@ -1,0 +1,12 @@
+//
+//  Development.xcconfig
+//  LRPreferenceLink
+//
+//  Created by Najdan Tomic on 4/23/20.
+//  Copyright © 2020 LiveRamp. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+LRPL_API = https:/$()/data-api.acc.preferencelink.com/v1

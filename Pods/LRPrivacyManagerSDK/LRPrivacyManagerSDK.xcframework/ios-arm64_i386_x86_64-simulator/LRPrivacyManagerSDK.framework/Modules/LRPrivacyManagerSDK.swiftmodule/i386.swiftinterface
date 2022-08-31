@@ -1,0 +1,1878 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LRPrivacyManagerSDK
+import AppTrackingTransparency
+import Foundation
+import LRPreferenceLinkSDK
+import SQLite3
+import SafariServices
+import Security
+import Swift
+import SystemConfiguration
+import UIKit
+import _Concurrency
+@objc public class Publisher : ObjectiveC.NSObject, Swift.Codable {
+  public var purposes: [Swift.Int]?
+  public var legIntPurposes: [Swift.Int]?
+  public var specialPurposes: [Swift.Int]?
+  public var lockedPurposes: [Swift.Int]?
+  public var features: [Swift.Int]?
+  public var name: Swift.String?
+  public var policyUrl: Swift.String?
+  public var enabled: Swift.Bool?
+  public init(purposes: [Swift.Int]? = nil, legIntPurposes: [Swift.Int]? = nil, specialPurposes: [Swift.Int]? = nil, lockedPurposes: [Swift.Int]? = nil, features: [Swift.Int]? = nil, name: Swift.String? = nil, policyUrl: Swift.String? = nil, enabled: Swift.Bool? = nil)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class Overflow : ObjectiveC.NSObject, Swift.Codable {
+  public var httpGetLimit: Swift.Int {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public enum LRError : Swift.Int, Swift.Error {
+  case notInitialized
+  case initialization
+  case missingConfiguration
+  case invalidConfiguration
+  case missingAppId
+  case wrongUIHierarchy
+  case userInterfaceAlreadyPresented
+  case offlineGVLInvalid
+  case offlineGVLMissing
+  case missingPublisherTCConfiguration
+  case giveConsentError
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension LRPrivacyManagerSDK.LRError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class VendorLockedPurposes : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var vendorId: Swift.Int {
+    get
+  }
+  @objc public var purposes: [Swift.Int] {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @objcMembers public class VendorConsent : ObjectiveC.NSObject {
+  @objc public var vendorId: Swift.Int {
+    get
+  }
+  @objc public var hasConsent: Swift.Bool {
+    get
+  }
+  @objc public init(vendorId: Swift.Int, hasConsent: Swift.Bool)
+  @objc deinit
+}
+public enum ButtonShape : Swift.String {
+  case rectangle
+  case round
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc public class AppUIConfig : ObjectiveC.NSObject {
+  public static var backgroundColor: UIKit.UIColor
+  public static var paragraphFontColor: UIKit.UIColor
+  public static var headerColor: UIKit.UIColor
+  public static var acceptBtnBgColor: UIKit.UIColor
+  public static var acceptBtnTextColor: UIKit.UIColor
+  public static var acceptBtnStrokeColor: UIKit.UIColor
+  public static var saveAndExitBtnBgColor: UIKit.UIColor
+  public static var saveAndExitBtnStrokeColor: UIKit.UIColor
+  public static var saveAndExitBtnTextColor: UIKit.UIColor
+  public static var denyBtnBgColor: UIKit.UIColor
+  public static var denyBtnStrokeColor: UIKit.UIColor
+  public static var denyBtnTextColor: UIKit.UIColor
+  public static var manageSettingsBtnBgColor: UIKit.UIColor
+  public static var manageSettingsBtnStrokeColor: UIKit.UIColor
+  public static var manageSettingsBtnTextColor: UIKit.UIColor
+  public static var navigationLinkFontColor: UIKit.UIColor
+  public static var tabTitleFontColor: UIKit.UIColor
+  public static var accentFontColor: UIKit.UIColor
+  public static var disclosureBackgroundColor: UIKit.UIColor
+  public static func acceptBtnBorderShape(traitCollection: UIKit.UITraitCollection? = nil) -> LRPrivacyManagerSDK.ButtonShape
+  public static func denyBtnBorderShape(traitCollection: UIKit.UITraitCollection? = nil) -> LRPrivacyManagerSDK.ButtonShape
+  public static func manageSettingsBtnBorderShape(traitCollection: UIKit.UITraitCollection? = nil) -> LRPrivacyManagerSDK.ButtonShape
+  public static func saveAndExitBtnBorderShape(traitCollection: UIKit.UITraitCollection? = nil) -> LRPrivacyManagerSDK.ButtonShape
+  public static func acceptBtnShadow(traitCollection: UIKit.UITraitCollection? = nil) -> Swift.Bool?
+  public static func denyBtnShadow(traitCollection: UIKit.UITraitCollection? = nil) -> Swift.Bool?
+  public static func manageSettingsBtnShadow(traitCollection: UIKit.UITraitCollection? = nil) -> Swift.Bool?
+  public static func saveAndExitBtnShadow(traitCollection: UIKit.UITraitCollection? = nil) -> Swift.Bool?
+  public static var acceptBtnVisibility: Swift.Bool {
+    get
+  }
+  public static var acceptAllDialogEnabled: Swift.Bool {
+    get
+  }
+  public static var saveAndExitDialogEnabled: Swift.Bool {
+    get
+  }
+  public static var saveAndExitEnabled: Swift.Bool {
+    get
+  }
+  public static var denyBtnVisibility: Swift.Bool {
+    get
+  }
+  public static var denyAllDialogEnabled: Swift.Bool {
+    get
+  }
+  public static var denyAllAction: Swift.Int {
+    get
+  }
+  public static var denyRestrictions: Swift.Int {
+    get
+  }
+  public static var headerShowCloseBtn: Swift.Bool {
+    get
+  }
+  public static var headerShowLogo: Swift.Bool {
+    get
+  }
+  public static var closeDialogEnabled: Swift.Bool {
+    get
+  }
+  public static var closeDialogEnabledOnManager: Swift.Bool {
+    get
+  }
+  public static var closeDialogEnabledOnNotice: Swift.Bool {
+    get
+  }
+  public static var rejectAllFirstLayerVisibility: Swift.Bool {
+    get
+  }
+  public static var rejectAllSecondLayerVisibility: Swift.Bool {
+    get
+  }
+  public static var backToNoticeVisibility: Swift.Bool {
+    get
+  }
+  public static var titleAlignment: UIKit.NSTextAlignment
+  public static let btnShape: LRPrivacyManagerSDK.ButtonShape
+  public static let titleFontSize: CoreGraphics.CGFloat
+  public static let introTextFontSize: CoreGraphics.CGFloat
+  public static let topicTitleFontSize: CoreGraphics.CGFloat
+  public static let topicParagraphFontSize: CoreGraphics.CGFloat
+  public static var useCustomProvidedFont: Swift.Bool {
+    get
+  }
+  public static var providedRegularFontName: Swift.String {
+    get
+  }
+  public static var providedSemiboldFontName: Swift.String {
+    get
+  }
+  public static var providedBoldFontName: Swift.String {
+    get
+  }
+  public static let logoWidth: CoreGraphics.CGFloat
+  public static let logoHeight: CoreGraphics.CGFloat
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class StackInfo : ObjectiveC.NSObject, Swift.Codable {
+  public enum InfoType : Swift.String, Swift.Codable {
+    case stack
+    case purpose
+    case specialFeature
+    case customStack
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var type: LRPrivacyManagerSDK.StackInfo.InfoType? {
+    get
+  }
+  public var name: Swift.String? {
+    get
+  }
+  public var id: Swift.Int? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public enum LREvent : Swift.Int {
+  case tcloaded
+  case cmpuishown
+  case useractioncomplete
+  case stub
+  case loading
+  case loaded
+  case disabled
+  case auditIdChanged
+  case acceptAllButtonClicked
+  case denyAllButtonClicked
+  case saveAndExitButtonClicked
+  case exitButtonClicked
+  case shouldPresentConsentWall
+  case notSubjectToGDPR
+  case userInterfaceAlreadyPresented
+  case dauLogSent
+  case syncedWithPreferenceLink
+  case attInitialContinue
+  case attInitialCanceled
+  case attReminderSettings
+  case attReminderCanceled
+  case attAuthorized
+  case attDenied
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct LRSorter {
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers final public class TCData : ObjectiveC.NSObject {
+  @objc final public var tcString: Swift.String?
+  @objc final public var addtlConsent: Swift.String?
+  @objc final public var tcfPolicyVersion: Swift.Int
+  @objc final public var cmpId: Swift.Int
+  @objc final public var cmpVersion: Swift.Int
+  @objc final public var gdprApplies: Swift.Bool {
+    @objc get
+  }
+  @objc final public var eventStatus: Swift.String?
+  @objc final public var cmpStatus: Swift.String {
+    @objc get
+  }
+  final public var listenerId: Swift.Int?
+  @objc final public var isServiceSpecific: Swift.Bool
+  final public var useNonStandardStacks: Swift.Bool?
+  @objc final public var publisherCC: Swift.String?
+  final public var purposeOneTreatment: Swift.Bool?
+  @objc final public var outOfBand: LRPrivacyManagerSDK.TCDataOutOfBand?
+  @objc final public var purpose: LRPrivacyManagerSDK.TCDataPurposeConsent?
+  @objc final public var vendor: LRPrivacyManagerSDK.TCDataVendorConsent?
+  @objc final public var specialFeatureOptins: [Swift.String : Swift.Bool]?
+  @objc final public var publisher: LRPrivacyManagerSDK.TCDataPublisher?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AttConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var localization: [Swift.String : LRPrivacyManagerSDK.AttLocalization]? {
+    get
+  }
+  public var enabled: Swift.Bool? {
+    get
+  }
+  @objc public var topics: [Swift.String : [LRPrivacyManagerSDK.Topic]]? {
+    get
+  }
+  @objc public var ui: LRPrivacyManagerSDK.AttUIConfig? {
+    get
+  }
+  @objc public var controls: LRPrivacyManagerSDK.AttControlsConfig? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@propertyWrapper public struct UIColorValue : Swift.Codable {
+  public var wrappedValue: UIKit.UIColor?
+  public init(wrappedValue: UIKit.UIColor?)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class Localization : ObjectiveC.NSObject, Swift.Codable {
+  public var accept: Swift.String? {
+    get
+  }
+  public var acceptAll: Swift.String? {
+    get
+  }
+  public var acceptAllDescription: Swift.String? {
+    get
+  }
+  public var accessibilityAccept: Swift.String? {
+    get
+  }
+  public var accessibilityBack: Swift.String? {
+    get
+  }
+  public var accessibilityBooleanConsent: Swift.String? {
+    get
+  }
+  public var accessibilityBooleanLI: Swift.String? {
+    get
+  }
+  public var accessibilityClose: Swift.String? {
+    get
+  }
+  public var accessibilityCustomize: Swift.String? {
+    get
+  }
+  public var accessibilityDeviceStorageDisclosure: Swift.String? {
+    get
+  }
+  public var accessibilityDisclosurePurpose: Swift.String? {
+    get
+  }
+  public var accessibilityFeatureInfo: Swift.String? {
+    get
+  }
+  public var accessibilityFeatureVendors: Swift.String? {
+    get
+  }
+  public var accessibilityInformationModule: Swift.String? {
+    get
+  }
+  public var accessibilityPrivacyPolicy: Swift.String? {
+    get
+  }
+  public var accessibilityPurposeInfo: Swift.String? {
+    get
+  }
+  public var accessibilityPurposeList: Swift.String? {
+    get
+  }
+  public var accessibilityPurposesConsent: Swift.String? {
+    get
+  }
+  public var accessibilityPurposesLI: Swift.String? {
+    get
+  }
+  public var accessibilityReject: Swift.String? {
+    get
+  }
+  public var accessibilitySave: Swift.String? {
+    get
+  }
+  public var accessibilityStackInfo: Swift.String? {
+    get
+  }
+  public var accessibilityToggle: Swift.String? {
+    get
+  }
+  public var accessibilityTopic: Swift.String? {
+    get
+  }
+  public var accessibilityVendorFeatures: Swift.String? {
+    get
+  }
+  public var accessibilityVendorList: Swift.String? {
+    get
+  }
+  public var accessibilityVendors: Swift.String? {
+    get
+  }
+  public var accessibilityVendorsConsent: Swift.String? {
+    get
+  }
+  public var accessibilityVendorsLI: Swift.String? {
+    get
+  }
+  public var accessibilityWindow: Swift.String? {
+    get
+  }
+  public var alwaysOn: Swift.String? {
+    get
+  }
+  public var auditIdExplanation: Swift.String? {
+    get
+  }
+  public var auditIdTitle: Swift.String? {
+    get
+  }
+  public var backButtonDialogBody: Swift.String? {
+    get
+  }
+  public var backButtonDialogButton: Swift.String? {
+    get
+  }
+  public var backButtonDialogTitle: Swift.String? {
+    get
+  }
+  public var backToNotice: Swift.String? {
+    get
+  }
+  public var cancel: Swift.String? {
+    get
+  }
+  public var claimingLegitimateInterest: Swift.String? {
+    get
+  }
+  public var close: Swift.String? {
+    get
+  }
+  public var consent: Swift.String? {
+    get
+  }
+  public var consentToolToggleButton: Swift.String? {
+    get
+  }
+  public var cookieMaxAgeSeconds: Swift.String? {
+    get
+  }
+  public var cookieRefresh: Swift.String? {
+    get
+  }
+  public var copyToClipboard: Swift.String? {
+    get
+  }
+  public var customResurfacingElaboration: Swift.String? {
+    get
+  }
+  public var deny: Swift.String? {
+    get
+  }
+  public var denyAll: Swift.String? {
+    get
+  }
+  public var denyAllDescription: Swift.String? {
+    get
+  }
+  public var deviceStorageCookieRefresh: Swift.String? {
+    get
+  }
+  public var deviceStorageDisclosure: Swift.String? {
+    get
+  }
+  public var deviceStorageDisclosureNote: Swift.String? {
+    get
+  }
+  public var disable: Swift.String? {
+    get
+  }
+  public var disclosureIntro: Swift.String? {
+    get
+  }
+  public var domain: Swift.String? {
+    get
+  }
+  public var exitButtonBoxDescription: Swift.String? {
+    get
+  }
+  public var exitButtonBoxTitle: Swift.String? {
+    get
+  }
+  public var `false`: Swift.String? {
+    get
+  }
+  public var featureDetailsDescription: Swift.String? {
+    get
+  }
+  public var featureDetailsProcessingDataFor: Swift.String? {
+    get
+  }
+  public var featureDetailsTitle: Swift.String? {
+    get
+  }
+  public var features: Swift.String? {
+    get
+  }
+  public var featuresAndSpecialFeatures: Swift.String? {
+    get
+  }
+  public var giveConsentToAll: Swift.String? {
+    get
+  }
+  public var iObject: Swift.String? {
+    get
+  }
+  public var iabExplanation: Swift.String? {
+    get
+  }
+  public var identifier: Swift.String? {
+    get
+  }
+  public var introDescription: Swift.String? {
+    get
+  }
+  public var introTitle: Swift.String? {
+    get
+  }
+  public var legalText: Swift.String? {
+    get
+  }
+  public var legitimateInterest: Swift.String? {
+    get
+  }
+  public var legitimateInterestNote: Swift.String? {
+    get
+  }
+  public var managePurposes: Swift.String? {
+    get
+  }
+  public var manageSettings: Swift.String? {
+    get
+  }
+  public var manageVendors: Swift.String? {
+    get
+  }
+  public var maxAgeSeconds: Swift.String? {
+    get
+  }
+  public var moreInfo: Swift.String? {
+    get
+  }
+  public var myAuditId: Swift.String? {
+    get
+  }
+  public var objectToLegitimateInterestDescription: Swift.String? {
+    get
+  }
+  public var off: Swift.String? {
+    get
+  }
+  public var ok: Swift.String? {
+    get
+  }
+  public var on: Swift.String? {
+    get
+  }
+  public var ourPartners: Swift.String? {
+    get
+  }
+  public var privacyInformation: Swift.String? {
+    get
+  }
+  public var privacyInformationDescription: Swift.String? {
+    get
+  }
+  public var privacyInformationSubtitle: Swift.String? {
+    get
+  }
+  public var privacyManager: Swift.String? {
+    get
+  }
+  public var publisherDetailsDescription: Swift.String? {
+    get
+  }
+  public var publisherDetailsIntroText: Swift.String? {
+    get
+  }
+  public var publisherDetailsTitle: Swift.String? {
+    get
+  }
+  public var purposeDetailsClaimingLegitimateInterestFor: Swift.String? {
+    get
+  }
+  public var purposeDetailsRequiringConsentFor: Swift.String? {
+    get
+  }
+  public var purposes: Swift.String? {
+    get
+  }
+  public var purposesDetailsDescription: Swift.String? {
+    get
+  }
+  public var purposesDetailsTitle: Swift.String? {
+    get
+  }
+  public var purposesTabDescription: Swift.String? {
+    get
+  }
+  public var purposesTabNote: Swift.String? {
+    get
+  }
+  public var purposesTitle: Swift.String? {
+    get
+  }
+  public var requiringConsent: Swift.String? {
+    get
+  }
+  public var reset: Swift.String? {
+    get
+  }
+  public var resetAuditIdDialogBody: Swift.String? {
+    get
+  }
+  public var resetAuditIdDialogTitle: Swift.String? {
+    get
+  }
+  public var resetMyAuditId: Swift.String? {
+    get
+  }
+  public var resurfacingElaborationMenu: Swift.String? {
+    get
+  }
+  public var resurfacingElaborationNoToggle: Swift.String? {
+    get
+  }
+  public var resurfacingElaborationToggle: Swift.String? {
+    get
+  }
+  public var revokeConsentToAll: Swift.String? {
+    get
+  }
+  public var saveAndExit: Swift.String? {
+    get
+  }
+  public var saveAndExitDescription: Swift.String? {
+    get
+  }
+  public var specialFeatures: Swift.String? {
+    get
+  }
+  public var specialFeaturesDetailsDescription: Swift.String? {
+    get
+  }
+  public var specialFeaturesDetailsTitle: Swift.String? {
+    get
+  }
+  public var specialPurposeDetailsDescription: Swift.String? {
+    get
+  }
+  public var specialPurposeDetailsTitle: Swift.String? {
+    get
+  }
+  public var specialPurposes: Swift.String? {
+    get
+  }
+  public var thirdPartyVendors: Swift.String? {
+    get
+  }
+  public var tip: Swift.String? {
+    get
+  }
+  public var `true`: Swift.String? {
+    get
+  }
+  public var type: Swift.String? {
+    get
+  }
+  public var usesNonCookieAccessFalse: Swift.String? {
+    get
+  }
+  public var usesNonCookieAccessTrue: Swift.String? {
+    get
+  }
+  public var usesCookieAccessTrue: Swift.String? {
+    get
+  }
+  public var vendorDetailsClaimingLegitimateInterestFor: Swift.String? {
+    get
+  }
+  public var vendorDetailsProcessingDataFor: Swift.String? {
+    get
+  }
+  public var vendorDetailsRequiringConsentFor: Swift.String? {
+    get
+  }
+  public var vendorDetailsSupportingFeature: Swift.String? {
+    get
+  }
+  public var vendors: Swift.String? {
+    get
+  }
+  public var vendorsDetailsDescription: Swift.String? {
+    get
+  }
+  public var vendorsDetailsTitle: Swift.String? {
+    get
+  }
+  public var vendorsTabDescription: Swift.String? {
+    get
+  }
+  public var vendorsTitle: Swift.String? {
+    get
+  }
+  public var vendorsUsingThisPurpose: Swift.String? {
+    get
+  }
+  public var viewPrivacyPolicy: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class GeoTargeting : ObjectiveC.NSObject, Swift.Codable {
+  public var allCountries: Swift.Bool? {
+    get
+  }
+  public var countries: [Swift.String]? {
+    get
+  }
+  public var includeSelection: Swift.Bool? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public protocol NibOwnerLoadable : AnyObject {
+  static var nib: UIKit.UINib { get }
+}
+extension LRPrivacyManagerSDK.NibOwnerLoadable {
+  public static var nib: UIKit.UINib {
+    get
+  }
+}
+extension LRPrivacyManagerSDK.NibOwnerLoadable where Self : UIKit.UIView {
+  public func loadNibContent()
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class ButtonConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc @LRPrivacyManagerSDK.UIColorValue public var textColor: UIKit.UIColor? {
+    @objc get
+  }
+  @objc @LRPrivacyManagerSDK.UIColorValue public var strokeColor: UIKit.UIColor? {
+    @objc get
+  }
+  @objc @LRPrivacyManagerSDK.UIColorValue public var bgColor: UIKit.UIColor? {
+    @objc get
+  }
+  @objc public var borderShape: Swift.String? {
+    get
+  }
+  public var showShadow: Swift.Bool? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc public class GlobalVendorList : ObjectiveC.NSObject, Swift.Codable {
+  public var gvlSpecificationVersion: Swift.Int? {
+    get
+  }
+  public var vendorListVersion: Swift.Int? {
+    get
+  }
+  public var tcfPolicyVersion: Swift.Int? {
+    get
+  }
+  public var lastUpdated: Swift.String? {
+    get
+  }
+  public var purposes: [Swift.String : LRPrivacyManagerSDK.Purpose]? {
+    get
+  }
+  public var specialPurposes: [Swift.String : LRPrivacyManagerSDK.SpecialPurpose]? {
+    get
+  }
+  public var features: [Swift.String : LRPrivacyManagerSDK.Feature]? {
+    get
+  }
+  public var specialFeatures: [Swift.String : LRPrivacyManagerSDK.SpecialFeature]? {
+    get
+  }
+  public var stacks: [Swift.String : LRPrivacyManagerSDK.Stack]? {
+    get
+  }
+  public var vendors: [Swift.String : LRPrivacyManagerSDK.Vendor]? {
+    get
+  }
+  #warning("configuration parameter is added only for purpose of Unit Testing. This implementation should be improved. Use task: https://liveramp.atlassian.net/browse/PMSD-1540")
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AttControlsConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var showLogo: Swift.Bool? {
+    get
+  }
+  @objc public var initialScreen: LRPrivacyManagerSDK.AttScreenConfig? {
+    get
+  }
+  @objc public var reminder: LRPrivacyManagerSDK.AttScreenConfig? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @objcMembers public class VendorData : ObjectiveC.NSObject {
+  @objc public var vendorId: Swift.Int {
+    get
+  }
+  @objc public var purposesIds: [Swift.Int]? {
+    get
+  }
+  @objc public var specialFeaturesIds: [Swift.Int]? {
+    get
+  }
+  @objc public init(vendorId: Swift.Int, purposesIds: [Swift.Int]? = nil, specialFeaturesIds: [Swift.Int]? = nil)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc final public class TCDataRestriction : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class UIConfigDict : ObjectiveC.NSObject, Swift.Codable {
+  public var normalMode: LRPrivacyManagerSDK.UIConfig? {
+    get
+  }
+  public var darkMode: LRPrivacyManagerSDK.UIConfig? {
+    get
+  }
+  public var globalUiConfig: LRPrivacyManagerSDK.GlobalUIConfig? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc final public class TCDataPublisher : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AttButtonsConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var confirmButton: LRPrivacyManagerSDK.ButtonConfig? {
+    get
+  }
+  @objc public var cancelButton: LRPrivacyManagerSDK.ButtonConfig? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@available(*, unavailable, renamed: "Notification.Name.reachabilityChanged")
+public let ReachabilityChangedNotification: Foundation.NSNotification.Name
+extension Foundation.NSNotification.Name {
+  public static let reachabilityChanged: Foundation.Notification.Name
+}
+@_inheritsConvenienceInitializers @objc public class Purpose : ObjectiveC.NSObject, Swift.Codable {
+  public var id: Swift.Int? {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var purposeDescription: Swift.String {
+    get
+  }
+  public var descriptionLegal: Swift.String {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class Disclosure : ObjectiveC.NSObject, Swift.Codable {
+  public var hideCustomPurposes: Swift.Bool? {
+    get
+  }
+  public var hide: Swift.Bool? {
+    get
+  }
+  public var stacks: [Swift.Int]? {
+    get
+  }
+  public var stacksAndPurposesOrder: [LRPrivacyManagerSDK.StackInfo]? {
+    get
+  }
+  public var customStacks: [Swift.String : [LRPrivacyManagerSDK.CustomStack]]? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public enum TcfCommand : Swift.String {
+  case getTCData
+  case ping
+  case addEventListener
+  case removeEventListener
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum TcfPingStatus : Swift.String {
+  case stub
+  case loading
+  case loaded
+  case error
+  case visible
+  case hidden
+  case disabled
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum TcfEventStatus : Swift.String {
+  case tcloaded
+  case cmpuishown
+  case useractioncomplete
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public func __tcfapi(command: Swift.String, version: Swift.Int, callback: Any?, parameter: Any?)
+@_inheritsConvenienceInitializers @objc public class __tcfapiObjC : ObjectiveC.NSObject {
+  @objc public static func invoke(command: Swift.String, version: Swift.Int, callback: ((_ tcData: LRPrivacyManagerSDK.TCData, _ success: Swift.Bool) -> Swift.Void)?, parameter: Any?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UIFont {
+  public static func registerCustomFont<T>(fontFamily: T.Type, in bundle: Foundation.Bundle) where T : LRPrivacyManagerSDK.FontFamilyProtocol
+  public static func registerFont(withFilenameString filenameString: Swift.String, bundle: Foundation.Bundle)
+}
+public typealias DPGlobalVendorListAndPublisherCallback = (_ globalVendorList: LRPrivacyManagerSDK.GlobalVendorList?, _ publisher: LRPrivacyManagerSDK.Publisher?, _ error: Swift.Error?) -> Swift.Void
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class LRPreferenceLinkConfig : ObjectiveC.NSObject {
+  @objc public var identifyingValue: Any? {
+    @objc get
+    @objc set
+  }
+  @objc public var additionalData: [Swift.String : Any]
+  @objc public init(identifyingValue: Any?, additionalData: [Swift.String : Any] = [:])
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class Stack : ObjectiveC.NSObject, Swift.Codable {
+  public var id: Swift.Int? {
+    get
+  }
+  public var purposes: [Swift.Int] {
+    get
+  }
+  public var specialFeatures: [Swift.Int] {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var stackDescription: Swift.String {
+    get
+  }
+  public var expandedOnNotice: Swift.Bool {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public class PublisherConsent : ObjectiveC.NSObject, Swift.Codable {
+  public var givenConsent: Swift.Bool? {
+    get
+  }
+  public var givenLegIntConsent: Swift.Bool? {
+    get
+  }
+  public init(givenConsent: Swift.Bool, givenLegIntConsent: Swift.Bool)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class Vendor : ObjectiveC.NSObject, Swift.Codable {
+  public var id: Swift.Int? {
+    get
+  }
+  public var name: Swift.String? {
+    get
+  }
+  public var purposes: [Swift.Int] {
+    get
+  }
+  public var legIntPurposes: [Swift.Int] {
+    get
+  }
+  public var flexiblePurposes: [Swift.Int] {
+    get
+  }
+  public var specialPurposes: [Swift.Int] {
+    get
+  }
+  public var features: [Swift.Int] {
+    get
+  }
+  public var specialFeatures: [Swift.Int] {
+    get
+  }
+  public var policyUrl: Swift.String {
+    get
+  }
+  public var overflow: LRPrivacyManagerSDK.Overflow? {
+    get
+  }
+  public var deviceStorageDisclosureUrl: Swift.String? {
+    get
+  }
+  public var cookieMaxAgeSeconds: Swift.Int? {
+    get
+  }
+  public var usesNonCookieAccess: Swift.Bool? {
+    get
+  }
+  public var usesCookies: Swift.Bool? {
+    get
+  }
+  public var cookieRefresh: Swift.Bool? {
+    get
+  }
+  public func getDisclosures(_ callback: @escaping ([LRPrivacyManagerSDK.DisclosureData]) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+infix operator <> : DefaultPrecedence
+@_inheritsConvenienceInitializers @objc public class CustomFontConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var useCustomFont: Swift.Bool? {
+    get
+  }
+  public var regularFontName: Swift.String? {
+    get
+  }
+  public var semiBoldFontName: Swift.String? {
+    get
+  }
+  public var boldFontName: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class RedisplayAfter : ObjectiveC.NSObject, Swift.Codable {
+  public var accept: Swift.Double? {
+    get
+  }
+  public var reject: Swift.Double? {
+    get
+  }
+  public var vendorChange: Swift.Double? {
+    get
+  }
+  public var configChange: Swift.Double? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class GlobalUIConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var acceptBtnVisibility: Swift.Bool? {
+    get
+  }
+  public var acceptAllDialogEnabled: Swift.Bool? {
+    get
+  }
+  public var saveAndExitDialogEnabled: Swift.Bool? {
+    get
+  }
+  public var saveAndExitEnabled: Swift.Bool? {
+    get
+  }
+  public var denyBtnVisibility: Swift.Bool? {
+    get
+  }
+  public var denyAllDialogEnabled: Swift.Bool? {
+    get
+  }
+  public var denyAllAction: Swift.Int? {
+    get
+  }
+  public var denyRestrictions: Swift.Int? {
+    get
+  }
+  public var headerShowCloseBtn: Swift.Bool? {
+    get
+  }
+  public var headerShowLogo: Swift.Bool? {
+    get
+  }
+  public var closeDialogEnabled: Swift.Bool? {
+    get
+  }
+  public var closeDialogEnabledOnManager: Swift.Bool? {
+    get
+  }
+  public var closeDialogEnabledOnNotice: Swift.Bool? {
+    get
+  }
+  public var titleAlignment: Swift.String? {
+    get
+  }
+  public var rejectAllFirstLayerVisibility: Swift.Bool? {
+    get
+  }
+  public var rejectAllSecondLayerVisibility: Swift.Bool? {
+    get
+  }
+  public var backToNoticeVisibility: Swift.Bool? {
+    get
+  }
+  public var androidCustomFont: LRPrivacyManagerSDK.CustomFontConfig? {
+    get
+  }
+  public var iOSCustomFont: LRPrivacyManagerSDK.CustomFontConfig? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objcMembers public class LRConfiguration : ObjectiveC.NSObject, Swift.Codable {
+  public var cmpId: Swift.Int? {
+    get
+  }
+  @objc public var appId: Swift.String? {
+    get
+  }
+  public var cmpVersion: Swift.Int? {
+    get
+  }
+  public var configVersion: Swift.Int? {
+    get
+  }
+  public var logging: Swift.Bool? {
+    get
+  }
+  public var suppressUI: Swift.Bool? {
+    get
+  }
+  public var displayNotice: Swift.Bool? {
+    get
+  }
+  public var useNonStandardStacks: Swift.Bool? {
+    get
+  }
+  @objc public var redisplayAfter: LRPrivacyManagerSDK.RedisplayAfter? {
+    get
+  }
+  @objc public var consentDataConfig: LRPrivacyManagerSDK.ConsentDataConfig? {
+    get
+  }
+  @objc public var geoTargeting: LRPrivacyManagerSDK.GeoTargeting? {
+    get
+  }
+  @objc public var supportedLocales: [Swift.String]? {
+    get
+  }
+  @objc public var defaultLocale: Swift.String? {
+    get
+  }
+  @objc public var topics: [Swift.String : [LRPrivacyManagerSDK.Topic]]? {
+    get
+  }
+  @objc public var localization: [Swift.String : LRPrivacyManagerSDK.Localization]? {
+    get
+  }
+  @objc public var uiConfig: LRPrivacyManagerSDK.UIConfigDict? {
+    get
+  }
+  @objc public var disclosure: LRPrivacyManagerSDK.Disclosure? {
+    get
+  }
+  @objc public var noticeConfig: LRPrivacyManagerSDK.NoticeConfig? {
+    get
+  }
+  @objc public var preferenceLink: LRPrivacyManagerSDK.PreferenceLinkConfig? {
+    get
+  }
+  @objc public var attConfig: LRPrivacyManagerSDK.AttConfig? {
+    get
+  }
+  public var automaticallyDisplayConsentWall: Swift.Bool? {
+    get
+  }
+  @objc public init?(configurationURL: Foundation.URL)
+  @objc public init?(configurationData: Foundation.Data)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public protocol LRSDKManagerDelegate {
+  @objc func eventTriggered(event: LRPrivacyManagerSDK.LRSDKEvent)
+}
+@_inheritsConvenienceInitializers @objc public class Topic : ObjectiveC.NSObject, Swift.Codable {
+  public var title: Swift.String? {
+    get
+  }
+  public var icon: Swift.String? {
+    get
+  }
+  public var text: Swift.String? {
+    get
+  }
+  public var tip: Swift.String? {
+    get
+  }
+  public var displayPurposes: Swift.Bool? {
+    get
+  }
+  public var expanded: Swift.Bool? {
+    get
+  }
+  public var showOnNotice: Swift.Bool? {
+    get
+  }
+  public var required: Swift.Bool? {
+    get
+  }
+  public var isAuditId: Swift.Bool? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+extension LRPrivacyManagerSDK.Purpose {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+    @objc set(newDescription)
+  }
+}
+extension LRPrivacyManagerSDK.SpecialPurpose {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+    @objc set(newDescription)
+  }
+}
+extension LRPrivacyManagerSDK.Feature {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+    @objc set(newDescription)
+  }
+}
+extension LRPrivacyManagerSDK.SpecialFeature {
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+    @objc set(newDescription)
+  }
+}
+public typealias LRGlobalVendorListCallback = (_ globalVendorList: LRPrivacyManagerSDK.GlobalVendorList?, _ error: Swift.Error?) -> Swift.Void
+public typealias LRConfigurationCallback = (_ configuration: LRPrivacyManagerSDK.LRConfiguration?, _ error: Swift.Error?) -> Swift.Void
+public typealias LRPublisherTCCallback = (_ publisher: LRPrivacyManagerSDK.Publisher?, _ error: Swift.Error?) -> Swift.Void
+public typealias LRCompletionHandler = (_ success: Swift.Bool, _ error: Swift.Error?) -> Swift.Void
+public typealias LRDisclosureCallback = (_ disclosures: [LRPrivacyManagerSDK.DisclosureData]?, _ error: Swift.Error?) -> Swift.Void
+public typealias LRPLSyncCallback = (LRPreferenceLinkSDK.PLSynchronizationStatus, [Swift.String : Any], Swift.Error?) -> Swift.Void
+@objc public enum LRSDKEvent : Swift.Int {
+  case consentChanged
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum DisclosureDataType : Swift.Int, Swift.Codable {
+  case cookie
+  case web
+  case app
+  case invalid
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public class DisclosureDataArray : ObjectiveC.NSObject, Swift.Codable {
+  public var disclosures: [LRPrivacyManagerSDK.DisclosureData] {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class DisclosureData : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var identifier: Swift.String? {
+    get
+  }
+  public var type: LRPrivacyManagerSDK.DisclosureDataType? {
+    get
+  }
+  public var maxAgeSeconds: Swift.Int? {
+    get
+  }
+  public var cookieRefresh: Swift.Bool? {
+    get
+  }
+  @objc public var domain: Swift.String? {
+    get
+  }
+  @objc public var purposes: [Swift.Int]? {
+    get
+  }
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc final public class TCDataVendorConsent : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class CustomStack : ObjectiveC.NSObject, Swift.Codable {
+  public var name: Swift.String? {
+    get
+  }
+  public var stackDescription: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AttThemeConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc @LRPrivacyManagerSDK.URLValue public var imageUrl: Foundation.URL? {
+    @objc get
+  }
+  @objc public var initialScreen: LRPrivacyManagerSDK.AttButtonsConfig? {
+    get
+  }
+  @objc public var reminderScreen: LRPrivacyManagerSDK.AttButtonsConfig? {
+    get
+  }
+  public var showImage: Swift.Bool? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class SpecialFeature : ObjectiveC.NSObject, Swift.Codable {
+  public var id: Swift.Int? {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var featureDescription: Swift.String {
+    get
+  }
+  public var descriptionLegal: Swift.String {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class PingReturn : ObjectiveC.NSObject {
+  @objc final public var gdprApplies: Swift.Bool {
+    @objc get
+  }
+  @objc final public var cmpLoaded: Swift.Bool {
+    @objc get
+  }
+  @objc final public var cmpStatus: Swift.String {
+    @objc get
+  }
+  @objc final public var displayStatus: Swift.String? {
+    @objc get
+  }
+  @objc final public var apiVersion: Swift.String
+  @objc final public var cmpVersion: Swift.Int
+  @objc final public var cmpId: Swift.Int
+  @objc final public var gvlVersion: Swift.Int
+  @objc final public var tcfPolicyVersion: Swift.Int
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AttUIConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var lightTheme: LRPrivacyManagerSDK.AttThemeConfig? {
+    get
+  }
+  @objc public var darkTheme: LRPrivacyManagerSDK.AttThemeConfig? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc public class PublisherRestriction : ObjectiveC.NSObject, Swift.Codable {
+  public var purposeId: Swift.Int {
+    get
+  }
+  public var restrictionType: Swift.Int {
+    get
+  }
+  public var restrictedVendors: [Swift.Int]? {
+    get
+  }
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public protocol LRPrivacyManagerDelegate {
+  @objc func eventFired(event: LRPrivacyManagerSDK.LREvent)
+  @objc func didReceiveError(_ error: Swift.Error)
+}
+@objc public enum LRConsentScreen : Swift.Int {
+  case notice = 1
+  case manager = 2
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc final public class TCDataRestrictions : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc public class LRPrivacyManagerConfig : ObjectiveC.NSObject {
+  @objc public init(appId: Swift.String, fallbackConfiguration: LRPrivacyManagerSDK.LRConfiguration)
+  @objc convenience public init(appId: Swift.String, fallbackConfiguration: LRPrivacyManagerSDK.LRConfiguration, preferenceLinkConfig: LRPrivacyManagerSDK.LRPreferenceLinkConfig)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc final public class TCDataPurposeConsent : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@propertyWrapper public struct URLValue : Swift.Codable {
+  public var wrappedValue: Foundation.URL?
+  public init(wrappedValue: Foundation.URL?)
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class NoticeConfig : ObjectiveC.NSObject, Swift.Codable {
+  public enum ResurfacingElaboration : Swift.String, Swift.Codable {
+    case custom
+    case noToggle
+    case toggle
+    case hidden
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var resurfacingElaboration: LRPrivacyManagerSDK.NoticeConfig.ResurfacingElaboration? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AttLocalization : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var attReminderSettingsButton: Swift.String? {
+    get
+  }
+  @objc public var attReminderCancelButton: Swift.String? {
+    get
+  }
+  @objc public var attInitialContinueButton: Swift.String? {
+    get
+  }
+  @objc public var attReminderTitle: Swift.String? {
+    get
+  }
+  @objc public var attReminderDescription: Swift.String? {
+    get
+  }
+  @objc public var attInitialTitle: Swift.String? {
+    get
+  }
+  @objc public var attInitialDescription: Swift.String? {
+    get
+  }
+  @objc public var attInitialCancelButton: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class SpecialPurpose : ObjectiveC.NSObject, Swift.Codable {
+  public var id: Swift.Int? {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var purposeDescription: Swift.String {
+    get
+  }
+  public var descriptionLegal: Swift.String {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc final public class LRPrivacyManager : ObjectiveC.NSObject {
+  @objc public static func configure(with configuration: LRPrivacyManagerSDK.LRPrivacyManagerConfig)
+  @objc final public var cmpSdkVersion: Swift.String {
+    @objc get
+  }
+  @objc final public var currentLocale: Swift.String {
+    @objc get
+  }
+  @objc public static var shared: LRPrivacyManagerSDK.LRPrivacyManager {
+    @objc get
+  }
+  @objc final public func initialize(sdkInitializedHandler: LRPrivacyManagerSDK.LRCompletionHandler?)
+  @objc final public func getGlobalVendorList(callback: (_ globalVendorList: LRPrivacyManagerSDK.GlobalVendorList?, _ error: Swift.Error?) -> Swift.Void)
+  @objc final public func getConfiguration(callback: (_ configuration: LRPrivacyManagerSDK.LRConfiguration?, _ error: Swift.Error?) -> Swift.Void)
+  @objc final public func presentUserInterface(callback: LRPrivacyManagerSDK.LRCompletionHandler?)
+  @objc final public func persistUserDefaultsKeys()
+  @objc final public func restoreUserDefaultsKeys()
+  @objc final public func getIABTCString() -> Swift.String
+  @objc final public func getLRTCString() -> Swift.String
+  @objc final public func getACString() -> Swift.String
+  @objc final public func getPurposeOneTreatment() -> Swift.Bool
+  @objc final public func getAuditId() -> Swift.String
+  @objc final public func resetAuditId() -> Swift.String
+  @objc final public func giveConsent(consentData: LRPrivacyManagerSDK.ConsentData, consentScreen: LRPrivacyManagerSDK.LRConsentScreen = .notice, callback: LRPrivacyManagerSDK.LRCompletionHandler?)
+  @objc final public func acceptAll(consentScreen: LRPrivacyManagerSDK.LRConsentScreen = .notice, callback: LRPrivacyManagerSDK.LRCompletionHandler?)
+  @objc final public func revokeAll(consentScreen: LRPrivacyManagerSDK.LRConsentScreen = .notice, callback: LRPrivacyManagerSDK.LRCompletionHandler?)
+  @objc final public func getPublisherTCConfiguration(callback: LRPrivacyManagerSDK.LRPublisherTCCallback?)
+  @objc public static func setLRPrivacyManagerDelegate(delegate: LRPrivacyManagerSDK.LRPrivacyManagerDelegate)
+  @objc public static func removeLRPrivacyManagerDelegate()
+  @objc final public func getConsentData() -> LRPrivacyManagerSDK.ConsentData?
+  @objc public static func setLanguage(code: Swift.String)
+  @objc final public func checkConsent(for vendors: [LRPrivacyManagerSDK.VendorData]) -> [LRPrivacyManagerSDK.VendorConsent]?
+  @objc final public func doSync(callback: LRPrivacyManagerSDK.LRPLSyncCallback?)
+  @objc final public var preferenceLink: LRPrivacyManagerSDK.LRPreferenceLinkConfig {
+    get
+  }
+  #warning("Think about changing the parameters from this function. Some parameters are only used for purpose of Unit Testing. Use task: https://liveramp.atlassian.net/browse/PMSD-1540")
+  @objc final public func getConsentType() -> LRPrivacyManagerSDK.LRConsentType
+  @objc final public func getCookies(forDomain domain: Swift.String) -> [Foundation.HTTPCookie]
+  @objc final public func generateCookieSharingURL(_ url: Foundation.URL) -> Foundation.URL
+  @objc final public func clearUserDefaults()
+  @available(iOS 14, *)
+  @objc final public func presentATTPrePrompt()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class AttScreenConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var showX: Swift.Bool? {
+    get
+  }
+  public var showCancelButton: Swift.Bool? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class UIConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var headerColor: Swift.String? {
+    get
+  }
+  public var tabTitleFontColor: Swift.String? {
+    get
+  }
+  public var backgroundColor: Swift.String? {
+    get
+  }
+  public var navigationLinkFontColor: Swift.String? {
+    get
+  }
+  public var paragraphFontColor: Swift.String? {
+    get
+  }
+  public var accentFontColor: Swift.String? {
+    get
+  }
+  public var headerLogoUrl: Swift.String? {
+    get
+  }
+  public var headerLogoImage: UIKit.UIImage? {
+    get
+  }
+  public var acceptBtn: LRPrivacyManagerSDK.ButtonUIConfig? {
+    get
+  }
+  public var denyBtn: LRPrivacyManagerSDK.ButtonUIConfig? {
+    get
+  }
+  public var saveAndExitBtn: LRPrivacyManagerSDK.ButtonUIConfig? {
+    get
+  }
+  public var manageSettingsBtn: LRPrivacyManagerSDK.ButtonUIConfig? {
+    get
+  }
+  public var secondaryBackgroundColor: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class Feature : ObjectiveC.NSObject, Swift.Codable {
+  public var id: Swift.Int? {
+    get
+  }
+  public var name: Swift.String {
+    get
+  }
+  public var featureDescription: Swift.String {
+    get
+  }
+  public var descriptionLegal: Swift.String {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ConsentData : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var specialFeatures: [Swift.Int]? {
+    get
+  }
+  @objc public var purposes: [Swift.Int]? {
+    get
+  }
+  @objc public var purposesLegInt: [Swift.Int]? {
+    get
+  }
+  @objc public var vendors: [Swift.Int]? {
+    get
+  }
+  @objc public var vendorsLegInt: [Swift.Int]? {
+    get
+  }
+  @objc public var publisherTCConsent: LRPrivacyManagerSDK.PublisherConsent? {
+    get
+  }
+  @objc public init(specialFeatures: [Swift.Int], purposes: [Swift.Int], purposesLegInt: [Swift.Int], vendors: [Swift.Int], vendorsLegInt: [Swift.Int], publisherTCConsent: LRPrivacyManagerSDK.PublisherConsent? = nil)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers @objc public class ButtonUIConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var showShadow: Swift.Bool? {
+    get
+  }
+  public var bgColor: Swift.String? {
+    get
+  }
+  public var strokeColor: Swift.String? {
+    get
+  }
+  public var textColor: Swift.String? {
+    get
+  }
+  public var borderShape: Swift.String? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public protocol FontFamilyProtocol : Swift.CaseIterable {
+  var fontName: Swift.String { get }
+  var rawValue: Swift.String { get }
+}
+public enum OpenSans : Swift.String, LRPrivacyManagerSDK.FontFamilyProtocol {
+  case semibold
+  case light
+  case italic
+  case extraBold
+  case lightItalic
+  case bold
+  case semiboldItalic
+  case extrboldItalic
+  case regular
+  case boldItalic
+  public var fontName: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [LRPrivacyManagerSDK.OpenSans]
+  public typealias RawValue = Swift.String
+  public static var allCases: [LRPrivacyManagerSDK.OpenSans] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum Flex : Swift.String, LRPrivacyManagerSDK.FontFamilyProtocol {
+  case bold
+  case thin
+  case regular
+  case blackItalic
+  case black
+  case medium
+  case italic
+  case demiItalic
+  case mediumItalic
+  case boldItalic
+  case demi
+  case lightItalic
+  case thinItalic
+  case light
+  case heavy
+  case heavyItalic
+  public var fontName: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias AllCases = [LRPrivacyManagerSDK.Flex]
+  public typealias RawValue = Swift.String
+  public static var allCases: [LRPrivacyManagerSDK.Flex] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @objc final public class TCDataOutOfBand : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc public class ConsentDataConfig : ObjectiveC.NSObject, Swift.Codable {
+  public var vendors: [Swift.Int]? {
+    get
+  }
+  public var handleLegIntOnAcceptAndDenyAll: Swift.Bool? {
+    get
+  }
+  public var publisher: LRPrivacyManagerSDK.Publisher? {
+    get
+  }
+  public var publisherRestrictions: [LRPrivacyManagerSDK.PublisherRestriction]? {
+    get
+  }
+  public var purposeOneTreatment: Swift.Bool? {
+    get
+  }
+  public var publisherCC: Swift.String? {
+    get
+  }
+  public var lockedPurposesPerVendor: [LRPrivacyManagerSDK.VendorLockedPurposes]? {
+    get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc public enum LRConsentType : Swift.Int {
+  case rejectAll
+  case acceptAll
+  case partialConsent
+  case unknownConsent
+  case gdprNotApplied
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class PreferenceLinkConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc public enum TimeoutOption : Swift.Int, Swift.Codable {
+    case seconds
+    case minutes
+    case hours
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc public var enabled: Swift.Bool {
+    get
+  }
+  @objc public var apiKey: Swift.String {
+    get
+  }
+  @objc public var identifyingField: Swift.String {
+    get
+  }
+  @objc public var consentTriggerVersion: Swift.Int {
+    get
+  }
+  @objc public var timeoutValue: Swift.Int {
+    get
+  }
+  @objc public var timeoutOption: LRPrivacyManagerSDK.PreferenceLinkConfig.TimeoutOption {
+    get
+  }
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension LRPrivacyManagerSDK.LRError : Swift.Equatable {}
+extension LRPrivacyManagerSDK.LRError : Swift.Hashable {}
+extension LRPrivacyManagerSDK.LRError : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.ButtonShape : Swift.Equatable {}
+extension LRPrivacyManagerSDK.ButtonShape : Swift.Hashable {}
+extension LRPrivacyManagerSDK.ButtonShape : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.StackInfo.InfoType : Swift.Equatable {}
+extension LRPrivacyManagerSDK.StackInfo.InfoType : Swift.Hashable {}
+extension LRPrivacyManagerSDK.StackInfo.InfoType : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.LREvent : Swift.Equatable {}
+extension LRPrivacyManagerSDK.LREvent : Swift.Hashable {}
+extension LRPrivacyManagerSDK.LREvent : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.TcfCommand : Swift.Equatable {}
+extension LRPrivacyManagerSDK.TcfCommand : Swift.Hashable {}
+extension LRPrivacyManagerSDK.TcfCommand : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.TcfPingStatus : Swift.Equatable {}
+extension LRPrivacyManagerSDK.TcfPingStatus : Swift.Hashable {}
+extension LRPrivacyManagerSDK.TcfPingStatus : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.TcfEventStatus : Swift.Equatable {}
+extension LRPrivacyManagerSDK.TcfEventStatus : Swift.Hashable {}
+extension LRPrivacyManagerSDK.TcfEventStatus : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.LRSDKEvent : Swift.Equatable {}
+extension LRPrivacyManagerSDK.LRSDKEvent : Swift.Hashable {}
+extension LRPrivacyManagerSDK.LRSDKEvent : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.DisclosureDataType : Swift.Equatable {}
+extension LRPrivacyManagerSDK.DisclosureDataType : Swift.Hashable {}
+extension LRPrivacyManagerSDK.DisclosureDataType : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.LRConsentScreen : Swift.Equatable {}
+extension LRPrivacyManagerSDK.LRConsentScreen : Swift.Hashable {}
+extension LRPrivacyManagerSDK.LRConsentScreen : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.NoticeConfig.ResurfacingElaboration : Swift.Equatable {}
+extension LRPrivacyManagerSDK.NoticeConfig.ResurfacingElaboration : Swift.Hashable {}
+extension LRPrivacyManagerSDK.NoticeConfig.ResurfacingElaboration : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.OpenSans : Swift.Equatable {}
+extension LRPrivacyManagerSDK.OpenSans : Swift.Hashable {}
+extension LRPrivacyManagerSDK.OpenSans : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.Flex : Swift.Equatable {}
+extension LRPrivacyManagerSDK.Flex : Swift.Hashable {}
+extension LRPrivacyManagerSDK.Flex : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.LRConsentType : Swift.Equatable {}
+extension LRPrivacyManagerSDK.LRConsentType : Swift.Hashable {}
+extension LRPrivacyManagerSDK.LRConsentType : Swift.RawRepresentable {}
+extension LRPrivacyManagerSDK.PreferenceLinkConfig.TimeoutOption : Swift.Equatable {}
+extension LRPrivacyManagerSDK.PreferenceLinkConfig.TimeoutOption : Swift.Hashable {}
+extension LRPrivacyManagerSDK.PreferenceLinkConfig.TimeoutOption : Swift.RawRepresentable {}

@@ -1,0 +1,142 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name LRPreferenceLinkSDK
+import Foundation
+import Swift
+@objc @_inheritsConvenienceInitializers @objcMembers public class PLParser : ObjectiveC.NSObject {
+  public static func toDictionary<T>(object: T, isSnakeCaseEncoding: Swift.Bool = false) -> [Swift.String : Any]? where T : Swift.Encodable
+  @objc public static func toData(object: [Swift.String : Any]) -> Foundation.Data?
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class LRPreferenceLink : ObjectiveC.NSObject {
+  @objc public static var shared: LRPreferenceLinkSDK.LRPreferenceLink
+  @objc final public func saveSubjectData(_ requestData: LRPreferenceLinkSDK.PLSaveSubjectDataRequest, completion: @escaping LRPreferenceLinkSDK.PLCompletionResult)
+  @objc final public func getSubjectData(for requestData: LRPreferenceLinkSDK.PLGetSubjectDataRequest, completion: @escaping LRPreferenceLinkSDK.PLCompletionResult)
+  @objc final public func syncPrivacyManagerData(_ requestData: LRPreferenceLinkSDK.PMSyncDataRequest, completion: LRPreferenceLinkSDK.PLSynchronizationResult?)
+  @objc final public func syncData(_ requestData: LRPreferenceLinkSDK.PLSynchronizationSubjectData, completion: LRPreferenceLinkSDK.PLSynchronizationResult?)
+  @objc deinit
+}
+@objc public class PLSaveSubjectDataRequest : ObjectiveC.NSObject {
+  public var subjectData: LRPreferenceLinkSDK.PLSubjectDataStorable
+  public var apiKey: Swift.String
+  public var identifyingField: Swift.String
+  public var timestamp: Swift.Int?
+  public init(subjectData: LRPreferenceLinkSDK.PLSubjectDataStorable, apiKey: Swift.String, identifyingField: Swift.String, timestamp: Swift.Int? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum PLError : Swift.Int, Swift.Error, Swift.CustomStringConvertible {
+  case noData, general, jsonParsing, forbidden, notFound, unknown, badRequest, identifyingFieldNotFound
+  public var description: Swift.String {
+    get
+  }
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+  public static var _nsErrorDomain: Swift.String {
+    get
+  }
+}
+@objc public protocol PLSubjectDataStorable {
+  @objc func asDictionary() -> [Swift.String : Any]
+}
+@objc public class PMSyncDataRequest : ObjectiveC.NSObject {
+  public var apiKey: Swift.String
+  public var identifyingField: Swift.String
+  public var identifyingValue: Swift.Codable
+  public var additionalData: [Swift.String : Any]
+  public var timestamp: Swift.Int?
+  public init(apiKey: Swift.String, identifyingField: Swift.String, identifyingValue: Swift.Codable, additionalData: [Swift.String : Any] = [:], timestamp: Swift.Int? = nil)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@usableFromInline
+internal protocol _AnyDecodable {
+  var value: Any { get }
+  init<T>(_ value: T?)
+}
+extension _AnyDecodable {
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc public class PLSubjectData : ObjectiveC.NSObject {
+  public struct Metadata : Swift.Codable {
+    public var timestamp: Swift.Int?
+    public var expiryDate: Swift.Int?
+    public init(from dictionary: [Swift.String : Any]?)
+    public init(from decoder: Swift.Decoder) throws
+    public func encode(to encoder: Swift.Encoder) throws
+  }
+  public var data: [Swift.String : Any]
+  public var metadata: LRPreferenceLinkSDK.PLSubjectData.Metadata?
+  public init?(from data: Foundation.Data)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public class PLGetSubjectDataRequest : ObjectiveC.NSObject {
+  public var apiKey: Swift.String
+  public var identifyingValue: Swift.Codable
+  public var timestamp: Swift.Int?
+  public init(apiKey: Swift.String, identifyingValue: Swift.Codable, timestamp: Swift.Int? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public typealias PLCompletionResult = (LRPreferenceLinkSDK.PLSubjectData?, Swift.Error?) -> Swift.Void
+public typealias PLSynchronizationResult = (LRPreferenceLinkSDK.PLSubjectData?, LRPreferenceLinkSDK.PLSynchronizationStatus, Swift.Error?) -> Swift.Void
+@objc public class PLSynchronizationSubjectData : ObjectiveC.NSObject {
+  public var subjectData: LRPreferenceLinkSDK.PLSubjectDataStorable
+  public var apiKey: Swift.String
+  public var identifyingField: Swift.String
+  public var identifyingValue: Swift.String? {
+    get
+  }
+  public var timestamp: Swift.Int
+  public init(subjectData: LRPreferenceLinkSDK.PLSubjectDataStorable, apiKey: Swift.String, identifyingField: Swift.String, timestamp: Swift.Int)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@usableFromInline
+internal protocol _AnyEncodable {
+  var value: Any { get }
+  init<T>(_ value: T?)
+}
+extension _AnyEncodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension _AnyEncodable {
+  public init(nilLiteral _: ())
+  public init(booleanLiteral value: Swift.Bool)
+  public init(integerLiteral value: Swift.Int)
+  public init(floatLiteral value: Swift.Double)
+  public init(extendedGraphemeClusterLiteral value: Swift.String)
+  public init(stringLiteral value: Swift.String)
+  public init(arrayLiteral elements: Any...)
+  public init(dictionaryLiteral elements: (Swift.AnyHashable, Any)...)
+}
+@objc public enum PLSynchronizationStatus : Swift.Int {
+  case nothingChanged = 0
+  case updatedOnServer = 1
+  case updatedLocally = 2
+  case failure = 3
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension PLSynchronizationStatus : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension LRPreferenceLinkSDK.PLError : Swift.Equatable {}
+extension LRPreferenceLinkSDK.PLError : Swift.Hashable {}
+extension LRPreferenceLinkSDK.PLError : Swift.RawRepresentable {}
+extension LRPreferenceLinkSDK.PLSynchronizationStatus : Swift.Equatable {}
+extension LRPreferenceLinkSDK.PLSynchronizationStatus : Swift.Hashable {}
+extension LRPreferenceLinkSDK.PLSynchronizationStatus : Swift.RawRepresentable {}
