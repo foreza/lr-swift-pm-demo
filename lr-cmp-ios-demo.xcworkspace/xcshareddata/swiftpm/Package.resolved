@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "iab-tcf-v2",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Singlespot/IAB-TCF-V2.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "5be4635583388fa74ace8958ae68bd8cba095afe"
+      }
+    }
+  ],
+  "version" : 2
+}

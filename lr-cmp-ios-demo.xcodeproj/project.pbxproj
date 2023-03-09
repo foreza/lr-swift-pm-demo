@@ -13,6 +13,8 @@
 		1040033E28BFF0B400F13918 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1040033C28BFF0B400F13918 /* Main.storyboard */; };
 		1040034028BFF0B700F13918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1040033F28BFF0B700F13918 /* Assets.xcassets */; };
 		1040034328BFF0B700F13918 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1040034128BFF0B700F13918 /* LaunchScreen.storyboard */; };
+		10A5307C29B15B47001066F2 /* IAB-TCF-V2 in Frameworks */ = {isa = PBXBuildFile; productRef = 10A5307B29B15B47001066F2 /* IAB-TCF-V2 */; };
+		10A5307E29B15B47001066F2 /* IAB-TCF-V2-Utils in Frameworks */ = {isa = PBXBuildFile; productRef = 10A5307D29B15B47001066F2 /* IAB-TCF-V2-Utils */; };
 		BD6F4DB7B9FC0D427A3913FD /* Pods_lr_cmp_ios_demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286CA8D093E6C0A4E5879232 /* Pods_lr_cmp_ios_demo.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD6F4DB7B9FC0D427A3913FD /* Pods_lr_cmp_ios_demo.framework in Frameworks */,
+				10A5307C29B15B47001066F2 /* IAB-TCF-V2 in Frameworks */,
+				10A5307E29B15B47001066F2 /* IAB-TCF-V2-Utils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +113,10 @@
 			dependencies = (
 			);
 			name = "lr-cmp-ios-demo";
+			packageProductDependencies = (
+				10A5307B29B15B47001066F2 /* IAB-TCF-V2 */,
+				10A5307D29B15B47001066F2 /* IAB-TCF-V2-Utils */,
+			);
 			productName = "lr-cmp-ios-demo";
 			productReference = 1040033328BFF0B400F13918 /* lr-cmp-ios-demo.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +145,9 @@
 				Base,
 			);
 			mainGroup = 1040032A28BFF0B400F13918;
+			packageReferences = (
+				10A5307A29B15B47001066F2 /* XCRemoteSwiftPackageReference "IAB-TCF-V2" */,
+			);
 			productRefGroup = 1040033428BFF0B400F13918 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,7 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3LN8244SS8;
+				DEVELOPMENT_TEAM = 74R7MMTVVB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "lr-cmp-ios-demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -386,7 +397,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3LN8244SS8;
+				DEVELOPMENT_TEAM = 74R7MMTVVB;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "lr-cmp-ios-demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -430,6 +441,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10A5307A29B15B47001066F2 /* XCRemoteSwiftPackageReference "IAB-TCF-V2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Singlespot/IAB-TCF-V2.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10A5307B29B15B47001066F2 /* IAB-TCF-V2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10A5307A29B15B47001066F2 /* XCRemoteSwiftPackageReference "IAB-TCF-V2" */;
+			productName = "IAB-TCF-V2";
+		};
+		10A5307D29B15B47001066F2 /* IAB-TCF-V2-Utils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10A5307A29B15B47001066F2 /* XCRemoteSwiftPackageReference "IAB-TCF-V2" */;
+			productName = "IAB-TCF-V2-Utils";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1040032B28BFF0B400F13918 /* Project object */;
 }

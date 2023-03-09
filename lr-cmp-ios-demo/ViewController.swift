@@ -8,25 +8,103 @@
 import UIKit
 import LRPrivacyManagerSDK
 import AppTrackingTransparency
+import IAB_TCF_V2_API
 
 
 class ViewController: UIViewController, LRPrivacyManagerDelegate {
     
     // You can get this from LiveRamp's Console
-    var cmp_configURL =  URL(string:"https://gdpr-wrapper.privacymanager.io/gdpr/a6e60fe1-6f81-4ed1-9f61-ae137a57bb01/gdpr-mobile-liveramp.json")
-    var cmp_appId = "a6e60fe1-6f81-4ed1-9f61-ae137a57bb01"
+    //    var cmp_configURL =  URL(string:"https://gdpr-wrapper.privacymanager.io/gdpr/a6e60fe1-6f81-4ed1-9f61-ae137a57bb01/gdpr-mobile-liveramp.json")
+    //    var cmp_appId = "a6e60fe1-6f81-4ed1-9f61-ae137a57bb01"
+    
+    var cmp_configURL  =  URL(string:"https://gdpr-wrapper.privacymanager.io/gdpr/c54af283-2412-49be-95f0-7c6cd1669071/gdpr-mobile-liveramp.json")
+    var cmp_appId = "c54af283-2412-49be-95f0-7c6cd1669071"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initCMP();
-        drawSimpleView();
+        // Sample TCF accept all string.
+        // Pretend we got this from a server or something.
+        var sampleTCString = "CPoTiAAPoTiAAADQABENC6CsAP_AAH7AAAAAF5wDwAAgAcABaAvMAKABTQBkAJ0ADcATcA5QAFQAIAEGADCBecA0ApoBNwAKgAcAAgAC0A5QAAQE6ADIADCAFABeYAA.fkAAAAAAAAA"
+        
+        drawSimpleView()
+        initCMP(tcString: sampleTCString)
     }
     
     
+    func testSyncConsent(tcString: String) {
+        
+        // Try clearing the user defaults for the SDK
+        LRPrivacyManager.shared.clearUserDefaults()
+        
+        // Get back ConsentData from 3rd party library
+        var newConsentData = self.decodeInputTCString(tcString: tcString)
+        
+        // Give Consent only after LR is initialized
+        LRPrivacyManager.shared.giveConsent(consentData: newConsentData) { success, error in
+            if success {
+                var myString = LRPrivacyManager.shared.getIABTCString()
+                print("SDK has set a new consent string:", myString)
+                self.updateSimpleView()
+            } else {
+                print("SDK init error: \(String(describing: error))")
+            }
+        }
+        
+        
+    }
+    
+    // Utility function to handle the extra library we dragged in.
+    func convertStringArrToIntArr(s: String) -> [Int]{
+        
+        var intArr = [Int]()
+        let characters = Array(s)
+
+        for (index, element) in characters.enumerated() {
+            if (element == "1"){
+                print(index+1)
+                intArr.append(index+1);
+            }
+        }
+        
+        return intArr
+    }
+    
+    
+    
+    // Use 3P Util to decode string and get back ConsentData
+    // I LOVE force unwraps (forgive me, this was for a demo)
+    func decodeInputTCString(tcString: String) -> ConsentData {
+        
+        SPTIabTCFApi().consentString = tcString;
+        let model = SPTIabTCFApi.decode(TCString: tcString);
+        
+        let specialFeatureOptIns = convertStringArrToIntArr(s: model!.specialFeatureOptIns)
+        let parsedPurposesConsents = convertStringArrToIntArr(s:model!.parsedPurposesConsents)
+        let parsedPurposesLegitmateInterest = convertStringArrToIntArr(s:model!.parsedPurposesLegitmateInterest)
+        let parsedVendorsConsents = convertStringArrToIntArr(s: model!.parsedVendorsConsents)
+        let parsedVendorsLegitmateInterest = convertStringArrToIntArr(s: model!.parsedVendorsLegitmateInterest)
+        
+        // TODO: Figure this out later
+        let publisherTCParsedPurposesConsents = convertStringArrToIntArr(s:model!.publisherTCParsedPurposesConsents)
+        let publisherTCParsedPurposesLegitmateInterest = convertStringArrToIntArr(s:model!.publisherTCParsedPurposesConsents)
+        
+        let pubConsent = PublisherConsent(givenConsent: true, givenLegIntConsent: true)
+        
+        let newConsentData = ConsentData(specialFeatures: specialFeatureOptIns, purposes: parsedPurposesConsents, purposesLegInt: parsedPurposesLegitmateInterest, vendors: parsedVendorsConsents, vendorsLegInt: parsedVendorsLegitmateInterest, publisherTCConsent: pubConsent)
+        
+        
+        return newConsentData;
+    
+    }
+    
+    
+    // Tell me I'm a bad developer in the comments below.
     func updateSimpleView() {
         
-        // Massive UI update on the main thread, that's how we roll, baby.
+        // Massive UI update on the main thread?
+        // Force unwraps?
+        // That's how we roll..
                 DispatchQueue.main.async {
                     
                     // Update value for the TC String
@@ -97,7 +175,6 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
         lr_consentString_text.tag = 2
         lr_consentString_text.center.x = view.center.x
         
-        
         // Show LR consent data!
         let lr_consentData_label = UILabel(frame:CGRect(x: 0, y: 470, width: view.safeAreaLayoutGuide.layoutFrame.size.width, height: 20))
         lr_consentData_label.text = "LR Consent Data"
@@ -109,21 +186,14 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
         lr_consentData_text.tag = 3
         lr_consentData_text.center.x = view.center.x
         
-        
-        
         // Add everything to view
         self.view.addSubview(showCMP_button)
-        
         self.view.addSubview(iab_consentString_label)
         self.view.addSubview(iab_consentString_text)
-
         self.view.addSubview(lr_consentString_label)
         self.view.addSubview(lr_consentString_text)
-        
         self.view.addSubview(lr_consentData_label)
         self.view.addSubview(lr_consentData_text)
-
-        
     }
     
     
@@ -133,8 +203,7 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
     }
     
     
-    
-    func initCMP() {
+    func initCMP(tcString: String) {
         
         LRPrivacyManager.setLRPrivacyManagerDelegate(delegate: self)
         
@@ -144,14 +213,16 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
         let config = LRPrivacyManagerConfig(appId: cmp_appId,
                                             fallbackConfiguration: fallbackConfiguration)
         
-        
         LRPrivacyManager.configure(with: config)
         LRPrivacyManager.shared.initialize { success, error in
             if success {
                 print("SDK is Ready")
-                self.updateSimpleView()
-                // Present the ATT pre-prompt
-                LRPrivacyManager.shared.presentATTPrePrompt()
+                
+                self.testSyncConsent(tcString: tcString)
+                // LRPrivacyManager.shared.presentATTPrePrompt()
+            
+                
+
             } else {
                 print("SDK init error: \(String(describing: error))")
             }
@@ -246,6 +317,7 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
     
     //MARK: ATT Handling
     
+    // In case you feel like showing the prompt yourself.
     func showATT() {
         self.checkATTStatus(completionHandler: {status in
                        switch status {
@@ -253,7 +325,7 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
                             // We can fetch things like the IDFA/EMAIL
                            print("We are authorized!")
                        case .denied, .notDetermined, .restricted:
-                           print("NOT AUTHORIZED - sorry, bud")
+                           print("NOT AUTHORIZED - sorry, buddy.")
                        @unknown default:
                            break
                        }
@@ -261,7 +333,7 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
     }
     
     
-    // https://blog.devgenius.io/request-tracking-authorization-in-ios-9af50727b885
+    // You can thank them: https://blog.devgenius.io/request-tracking-authorization-in-ios-9af50727b885
     func checkATTStatus(completionHandler: @escaping (ATTrackingManager.AuthorizationStatus) -> Void) {
             ATTrackingManager.requestTrackingAuthorization { status in
                 DispatchQueue.main.async {
@@ -270,7 +342,5 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
             }
         }
     
-
-
 }
 
