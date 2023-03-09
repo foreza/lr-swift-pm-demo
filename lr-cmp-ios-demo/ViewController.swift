@@ -25,17 +25,19 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
         
         // Sample TCF accept all string.
         // Pretend we got this from a server or something.
-        var sampleTCString = "CPoTiAAPoTiAAADQABENC6CsAP_AAH7AAAAAF5wDwAAgAcABaAvMAKABTQBkAJ0ADcATcA5QAFQAIAEGADCBecA0ApoBNwAKgAcAAgAC0A5QAAQE6ADIADCAFABeYAA.fkAAAAAAAAA"
+        var sampleTCStringAcceptAll = "CPoTiAAPoTiAAADQABENC6CsAP_AAH7AAAAAF5wDwAAgAcABaAvMAKABTQBkAJ0ADcATcA5QAFQAIAEGADCBecA0ApoBNwAKgAcAAgAC0A5QAAQE6ADIADCAFABeYAA.fkAAAAAAAAA"
+        
+        var sampleTCStringDenyAll = "CPoTiAAPoTiAAADQABENC6CgAAAAAH7AAAAAAAALzgGgLzADCAC0ACoAEAAoAHKAA4AAEAZACdACbgFNAAA.YAAAAAAAAAA"
         
         drawSimpleView()
-        initCMP(tcString: sampleTCString)
+        initCMP(tcString: sampleTCStringDenyAll)
     }
     
     
     func testSyncConsent(tcString: String) {
         
         // Try clearing the user defaults for the SDK
-        LRPrivacyManager.shared.clearUserDefaults()
+//        LRPrivacyManager.shared.clearUserDefaults()
         
         // Get back ConsentData from 3rd party library
         var newConsentData = self.decodeInputTCString(tcString: tcString)
