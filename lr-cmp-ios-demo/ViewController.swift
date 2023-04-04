@@ -48,7 +48,7 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
         LRPrivacyManager.shared.giveConsent(consentData: consentData) { success, error in
             if success {
                 // Re-init CMP to persist these settings.
-                self.initCMP() // LRPrivacyManager.shared.initialize
+                 self.initCMP() // LRPrivacyManager.shared.initialize
             
                 self.updateSimpleView()
             } else {
@@ -292,7 +292,7 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
 
     }
     
-    // Show the CMP
+    // Sync CMP on button press only to mimic network call, manually
     @objc func doSync() {
         self.syncConsent(tcString: sampleTCStringAcceptAll, customString: sampleCustomStringAcceptedAll)
     }
@@ -360,7 +360,6 @@ class ViewController: UIViewController, LRPrivacyManagerDelegate {
                    print("LRPrivacyManagerDelegate, eventFired: notSubjectToGDPR")
                    self.updateDoesCMPApply(doesApply: false)
                case .loaded:
-//                   self.syncConsent(tcString: sampleTCStringAcceptAll, customString: sampleCustomStringAcceptedAll)
                    print("LRPrivacyManagerDelegate, eventFired: loaded")
                case .dauLogSent:
                    print("LRPrivacyManagerDelegate, eventFired: dauLogSent")
